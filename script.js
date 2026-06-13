@@ -1,51 +1,84 @@
+let appData = {};
+
 fetch("data.json")
-.then(response => response.json())
-.then(data => {
-    renderLeaderboard(data.players);
-    renderMatches(data.matches);
-});
+  .then(response => response.json())
+  .then(data => {
+    appData = data;
+    renderAll();
+  });
 
-function renderLeaderboard(players) {
-    const sorted = players.map(p => ({...p, points: 0}))
-        .sort((a,b) => b.points - a.points);
+function showView(viewId) {
+  document.querySelectorAll(".view").forEach(view => {
+    view.classList.add("hidden");
+  });
 
-    let html = "";
-
-    sorted.forEach((p,i) => {
-        let medal = "";
-        if(i === 0) medal = "🥇";
-        else if(i === 1) medal = "🥈";
-        else if(i === 2) medal = "🥉";
-
-        html += `
-            <div class="row">
-                <div>${medal} ${p.name}</div>
-                <div class="points">${p.points}</div>
-            </div>
-        `;
-    });
-
-    document.getElementById("leaderboard").innerHTML = html;
+  document.getElementById(viewId).classList.remove("hidden");
 }
 
-function renderMatches(matches) {
-    let html = "";
+function renderAll() {
+  renderLeaderboard("homeLeaderboard", true);
+  renderLeaderboard("leaderboardList", false);
+  renderMatches("matchesList", appData.matches);
+  renderMatches("latestMatches", appData.matches.slice(0, 5));
+  renderPlayers();
+}
 
-    matches.forEach(match => {
-        const result = match.status === "finished"
-            ? `${match.resultHome}-${match.resultAway}`
-            : "Ej spelad";
+function renderLeaderboard(elementId, limit) {
+  const players = appData.players
+    .map(p => ({ ...p, points: 0 }))
+    .sort((a, b) => b.points - a.points);
 
-        html += `
-            <div class="row">
-                <div>
-                    <strong>Grupp ${match.group}</strong><br>
-                    ${match.home} - ${match.away}
-                </div>
-                <div class="points">${result}</div>
-            </div>
-        `;
-    });
+  const shownPlayers = limit ? players.slice(0, 3) : players;
 
-    document.getElementById("matches").innerHTML = html;
+  let html = "";
+
+  shownPlayers.forEach((p, i) => {
+    let medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : i + 1;
+
+    html += `
+      <div class="row">
+        <div>${medal} ${p.name}</div>
+        <div class="points">${p.points} p</div>
+      </div>
+    `;
+  });
+
+  document.getElementById(elementId).innerHTML = html;
+}
+
+function renderMatches(elementId, matches) {
+  let html = "";
+
+  matches.forEach(match => {
+    const result = match.status === "finished"
+      ? `${match.resultHome}-${match.resultAway}`
+      : "Ej spelad";
+
+    html += `
+      <div class="row">
+        <div>
+          <strong>${match.home} - ${match.away}</strong><br>
+          <span class="badge">Grupp ${match.group}</span>
+        </div>
+        <div class="points">${result}</div>
+      </div>
+    `;
+  });
+
+  document.getElementById(elementId).innerHTML = html;
+}
+
+function renderPlayers() {
+  let html = "";
+
+  appData.players.forEach(player => {
+    html += `
+      <div class="row">
+        <div>${player.name}</div>
+        <div class="points">›</div>
+      </div>
+    `;
+  });
+
+  document.getElementById("playersList").innerHTML = html;
 }
