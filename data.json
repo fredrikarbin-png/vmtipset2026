@@ -37,5 +37,12 @@
       "resultAway": 1,
       "status": "finished"
     }
-  ]
+  ],
+,
+"predictions": [
+  { "playerId": "oliver", "matchId": "A1", "home": 2, "away": 0 },
+  { "playerId": "oliver", "matchId": "A2", "home": 2, "away": 1 },
+  { "playerId": "loui", "matchId": "A1", "home": 3, "away": 0 },
+  { "playerId": "loui", "matchId": "A2", "home": 1, "away": 1 }
+]  
 }
