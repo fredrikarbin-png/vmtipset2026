@@ -2,6 +2,8 @@ let appData = {};
 
 loadData();
 
+const cacheBuster = Date.now();
+
 async function loadData() {
   const players = await fetch(`data/players.json?v=${cacheBuster}`).then(response => response.json());
   const matchesData = await fetch(`data/matches.json?v=${cacheBuster}`).then(response => response.json());
