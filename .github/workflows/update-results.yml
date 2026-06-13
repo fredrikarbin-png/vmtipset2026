@@ -1,83 +1,33 @@
-const fs = require("fs");
+name: Update Match Results
 
-const TOKEN = process.env.FOOTBALL_DATA_TOKEN;
-const FILE = "data/matches.json";
-const API_URL = "https://api.football-data.org/v4/competitions/WC/matches?season=2026";
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
 
-async function main() {
-  if (!TOKEN) throw new Error("FOOTBALL_DATA_TOKEN saknas");
+permissions:
+  contents: write
 
-  const data = JSON.parse(fs.readFileSync(FILE, "utf8"));
+jobs:
+  update:
+    runs-on: ubuntu-latest
 
-  const response = await fetch(API_URL, {
-    headers: {
-      "X-Auth-Token": TOKEN
-    }
-  });
+    steps:
+      - uses: actions/checkout@v4
 
-  if (!response.ok) {
-    throw new Error(`API-fel ${response.status}: ${await response.text()}`);
-  }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  const apiData = await response.json();
+      - name: Kor uppdatering
+        run: node scripts/update-results.js
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
 
-  for (const match of data.matches) {
-    const apiMatch = apiData.matches.find(m =>
-      same(m.homeTeam?.name, match.home) &&
-      same(m.awayTeam?.name, match.away)
-    );
-
-    if (!apiMatch) continue;
-
-    match.apiId = apiMatch.id;
-    match.kickoff = apiMatch.utcDate;
-
-    if (apiMatch.status === "FINISHED") {
-      match.status = "finished";
-      match.resultHome = apiMatch.score.fullTime.home;
-      match.resultAway = apiMatch.score.fullTime.away;
-    } else {
-      match.status = "scheduled";
-      match.resultHome = null;
-      match.resultAway = null;
-    }
-  }
-
-  data.updatedAt = new Date().toLocaleString("sv-SE", {
-    timeZone: "Europe/Stockholm"
-  });
-
-  fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
-  console.log("Klart! matches.json uppdaterad.");
-}
-
-function same(a, b) {
-  if (!a || !b) return false;
-
-  const x = clean(a);
-  const y = clean(b);
-
-  return x === y || x.includes(y) || y.includes(x);
-}
-
-function clean(name) {
-  return name
-    .toLowerCase()
-    .replaceAll(".", "")
-    .replaceAll("'", "")
-    .replaceAll("å", "a")
-    .replaceAll("ä", "a")
-    .replaceAll("ö", "o")
-    .replaceAll("côte d’ivoire", "ivory coast")
-    .replaceAll("cote divoire", "ivory coast")
-    .replaceAll("korea republic", "rep of korea")
-    .replaceAll("czechia", "czech rep")
-    .replaceAll("bosnia and herzegovina", "bosnia/herzeg")
-    .replaceAll("congo dr", "dr congo")
-    .trim();
-}
-
-main().catch(error => {
-  console.error(error);
-  process.exit(1);
-});
+      - name: Commit andringar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/matches.json
+          git diff --cached --quiet || git commit -m "Automatisk resultatuppdatering"
+          git push
