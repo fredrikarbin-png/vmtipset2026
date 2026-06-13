@@ -208,10 +208,14 @@ function renderHomeFourPointers() {
 }
 
 function renderLatestMatches() {
+
   let latest = appData.matches
-    .filter(match => match.status === "finished")
-    .slice(-5)
-    .reverse();
+    .filter(match =>
+      match.status === "finished" &&
+      match.kickoff
+    )
+    .sort((a, b) => new Date(b.kickoff) - new Date(a.kickoff))
+    .slice(0, 5);
 
   if (latest.length === 0) {
     latest = appData.matches.slice(0, 5);
