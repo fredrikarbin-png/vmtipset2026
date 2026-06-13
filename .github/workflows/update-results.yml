@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "*/30 * * * *"
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -12,5 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Visa att workflow fungerar
-        run: echo "Workflow fungerar!"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Kör uppdatering
+        run: node scripts/update-results.js
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+
+      - name: Commit ändringar
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/matches.json
+          git diff --cached --quiet || git commit -m "Automatisk resultatuppdatering"
+          git push
