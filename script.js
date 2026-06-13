@@ -82,3 +82,5 @@ function renderPlayers() {
 
   document.getElementById("playersList").innerHTML = html;
 }
+
+window.showView = showView;
