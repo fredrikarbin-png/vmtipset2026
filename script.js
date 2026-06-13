@@ -195,10 +195,12 @@ function renderHomeFourPointers() {
 
   players.forEach((player, index) => {
     html += `
-      <div class="row">
-        <div>${index + 1}. ${player.name}</div>
-        <div class="points">${player.fourPointers}</div>
-      </div>
+      <a class="player-link" href="player.html?player=${player.id}">
+        <div class="row">
+          <div>${index + 1}. ${player.name}</div>
+          <div class="points">${player.fourPointers}</div>
+        </div>
+      </a>
     `;
   });
 
