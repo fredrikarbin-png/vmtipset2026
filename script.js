@@ -208,7 +208,6 @@ function renderHomeFourPointers() {
 }
 
 function renderLatestMatches() {
-
   let latest = appData.matches
     .filter(match =>
       match.status === "finished" &&
@@ -218,7 +217,10 @@ function renderLatestMatches() {
     .slice(0, 5);
 
   if (latest.length === 0) {
-    latest = appData.matches.slice(0, 5);
+    latest = appData.matches
+      .filter(match => match.status === "finished")
+      .slice(-5)
+      .reverse();
   }
 
   renderMatches("latestMatches", latest);
