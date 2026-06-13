@@ -1,40 +1,41 @@
-const players=[
+fetch("data.json")
+.then(response => response.json())
+.then(data => {
 
-{name:"Oliver",points:0},
-{name:"Loui",points:0},
-{name:"Lova",points:0},
-{name:"Kattis",points:0},
-{name:"Emelie",points:0},
-{name:"Jens",points:0},
-{name:"Per",points:0},
-{name:"Fredrik",points:0}
+    let players = data.players;
 
-]
+    players.forEach(player => {
 
-players.sort((a,b)=>b.points-a.points)
+        player.points = 0;
 
-let html=""
+    });
 
-players.forEach((p,i)=>{
+    players.sort((a,b)=>b.points-a.points);
 
-let medal=""
+    let html="";
 
-if(i==0) medal="🥇"
-if(i==1) medal="🥈"
-if(i==2) medal="🥉"
+    players.forEach((p,i)=>{
 
-html+=`
+        let medal="";
 
-<div class="row">
+        if(i===0) medal="🥇";
+        else if(i===1) medal="🥈";
+        else if(i===2) medal="🥉";
 
-<div>${medal} ${p.name}</div>
+        html += `
 
-<div class="points">${p.points}</div>
+        <div class="row">
 
-</div>
+            <div>${medal} ${p.name}</div>
 
-`
+            <div class="points">${p.points}</div>
 
-})
+        </div>
 
-document.getElementById("leaderboard").innerHTML=html
+        `;
+
+    });
+
+    document.getElementById("leaderboard").innerHTML = html;
+
+});
