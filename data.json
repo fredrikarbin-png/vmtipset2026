@@ -1,0 +1,12 @@
+{
+  "players": [
+    { "id": "oliver", "name": "Oliver" },
+    { "id": "loui", "name": "Loui" },
+    { "id": "lova", "name": "Lova" },
+    { "id": "kattis", "name": "Kattis" },
+    { "id": "emelie", "name": "Emelie" },
+    { "id": "jens", "name": "Jens" },
+    { "id": "per", "name": "Per" },
+    { "id": "fredrik", "name": "Fredrik" }
+  ]
+}
