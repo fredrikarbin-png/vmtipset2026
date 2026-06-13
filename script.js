@@ -108,7 +108,7 @@ function renderAll() {
   renderLeaderboard("homeLeaderboard", false);
   renderLeaderboard("leaderboardList", false);
   renderMatches("matchesList", appData.matches);
-  renderMatches("latestMatches", appData.matches.slice(0, 5));
+  renderLatestMatches();
   renderPlayers();
   renderStats();
   renderHomeFourPointers();
@@ -205,6 +205,19 @@ function renderHomeFourPointers() {
   });
 
   document.getElementById("homeFourPointers").innerHTML = html;
+}
+
+function renderLatestMatches() {
+  let latest = appData.matches
+    .filter(match => match.status === "finished")
+    .slice(-5)
+    .reverse();
+
+  if (latest.length === 0) {
+    latest = appData.matches.slice(0, 5);
+  }
+
+  renderMatches("latestMatches", latest);
 }
 
 function renderMatches(elementId, matches) {
