@@ -137,15 +137,15 @@ function renderLeaderboard(elementId, limit) {
       index + 1;
 
     html += `
-      <div class="row">
-        <div>
-          <a class="player-link-inline" href="player.html?player=${player.id}">
-            ${medal} ${player.name}
-          </a><br>
-          <span class="badge">${player.fourPointers} st 4-poängare</span>
+      <a class="player-link" href="player.html?player=${player.id}">
+        <div class="row">
+          <div>
+            ${medal} ${player.name}<br>
+            <span class="badge">${player.fourPointers} st 4-poängare</span>
+          </div>
+          <div class="points">${player.points} p</div>
         </div>
-        <div class="points">${player.points} p</div>
-      </div>
+      </a>
     `;
   });
 
