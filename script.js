@@ -3,13 +3,13 @@ let appData = {};
 loadData();
 
 async function loadData() {
-  const players = await fetch("data/players.json").then(response => response.json());
-  const matchesData = await fetch("data/matches.json").then(response => response.json());
+  const players = await fetch(`data/players.json?v=${cacheBuster}`).then(response => response.json());
+  const matchesData = await fetch(`data/matches.json?v=${cacheBuster}`).then(response => response.json());
 
   const predictions = [];
 
   for (const player of players) {
-    const playerPredictions = await fetch(`data/predictions/${player.id}.json`)
+    const playerPredictions = await fetch(`data/predictions/${player.id}.json?v=${cacheBuster}`)
       .then(response => response.json())
       .catch(() => []);
 
