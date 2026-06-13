@@ -8,5 +8,34 @@
     { "id": "jens", "name": "Jens" },
     { "id": "per", "name": "Per" },
     { "id": "fredrik", "name": "Fredrik" }
+  ],
+  "matches": [
+    {
+      "id": "A1",
+      "group": "A",
+      "home": "Mexico",
+      "away": "South Africa",
+      "resultHome": 2,
+      "resultAway": 0,
+      "status": "finished"
+    },
+    {
+      "id": "A2",
+      "group": "A",
+      "home": "South Korea",
+      "away": "Czech Rep.",
+      "resultHome": 2,
+      "resultAway": 1,
+      "status": "finished"
+    },
+    {
+      "id": "B1",
+      "group": "B",
+      "home": "Canada",
+      "away": "Bosnia/Herzeg.",
+      "resultHome": 1,
+      "resultAway": 1,
+      "status": "finished"
+    }
   ]
 }
