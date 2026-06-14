@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14 00:48:40",
+  "updatedAt": "2026-06-14 08:18:54",
   "matches": [
     {
       "id": "A1",
@@ -138,9 +138,9 @@
       "group": "C",
       "home": "Brazil",
       "away": "Morocco",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 1,
       "kickoff": "2026-06-13T22:00:00Z",
       "apiId": 537339
     },
@@ -193,9 +193,9 @@
       "group": "C",
       "home": "Haiti",
       "away": "Scotland",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 1,
       "kickoff": "2026-06-14T01:00:00Z",
       "apiId": 537340
     },
@@ -259,9 +259,9 @@
       "group": "D",
       "home": "Australia",
       "away": "Turkey",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 2,
+      "resultAway": 0,
       "kickoff": "2026-06-14T04:00:00Z",
       "apiId": 537346
     },
