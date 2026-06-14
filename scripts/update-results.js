@@ -137,6 +137,8 @@ function clean(name) {
 
   cleaned = cleaned.replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
 
+  cleaned = cleaned.replace("cape verde islands", "cape verde");
+
   return TEAM_ALIASES[cleaned] || cleaned;
 }
 
