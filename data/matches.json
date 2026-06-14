@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14 23:45:30",
+  "updatedAt": "2026-06-15 00:15:34",
   "matches": [
     {
       "id": "A1",
@@ -336,9 +336,9 @@
       "group": "F",
       "home": "Netherlands",
       "away": "Japan",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 2,
+      "resultAway": 2,
       "kickoff": "2026-06-14T20:00:00Z",
       "apiId": 537357
     },
