@@ -138,6 +138,26 @@ function renderLastUpdated() {
     : "";
 }
 
+function getRankDisplay(players, index) {
+  const player = players[index];
+
+  if (index === 0) return "🥇";
+
+  const previousPlayer = players[index - 1];
+
+  if (
+    player.points === previousPlayer.points &&
+    player.fourPointers === previousPlayer.fourPointers
+  ) {
+    return getRankDisplay(players, index - 1);
+  }
+
+  if (index === 1) return "🥈";
+  if (index === 2) return "🥉";
+
+  return index + 1;
+}
+
 function renderLeaderboard(elementId, limit) {
   const players = getRankedPlayers();
   const shownPlayers = limit ? players.slice(0, 3) : players;
@@ -145,11 +165,7 @@ function renderLeaderboard(elementId, limit) {
   let html = "";
 
   shownPlayers.forEach((player, index) => {
-    const medal =
-      index === 0 ? "🥇" :
-      index === 1 ? "🥈" :
-      index === 2 ? "🥉" :
-      index + 1;
+    const medal = getRankDisplay(shownPlayers, index);
 
     html += `
       <a class="player-link" href="player.html?player=${player.id}">
@@ -173,10 +189,7 @@ function renderPodium() {
   let html = `<div class="podium">`;
 
   players.forEach((player, index) => {
-    const medal =
-      index === 0 ? "🥇" :
-      index === 1 ? "🥈" :
-      "🥉";
+    const medal = getRankDisplay(players, index);
 
     const cssClass =
       index === 0 ? "first" :
