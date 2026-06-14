@@ -1,6 +1,7 @@
 let appData = {};
 
 loadData();
+startLiveDataRefresh();
 
 async function loadData() {
   const cacheBuster = Date.now();
@@ -697,4 +698,22 @@ function renderMatchPageFromData() {
   });
 
   document.getElementById("matchPredictions").innerHTML = html;
+}
+
+function startLiveDataRefresh() {
+  setInterval(async () => {
+    try {
+      const cacheBuster = Date.now();
+
+      const matchesData = await fetch(`data/matches.json?v=${cacheBuster}`)
+        .then(response => response.json());
+
+      if (matchesData.updatedAt !== appData.updatedAt) {
+        console.log("🔄 Nya resultat hittades!");
+        await loadData();
+      }
+    } catch (error) {
+      console.log("Kunde inte live-uppdatera data", error);
+    }
+  }, 60 * 1000);
 }
