@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14 20:36:36",
+  "updatedAt": "2026-06-14 20:38:42",
   "matches": [
     {
       "id": "A1",
@@ -515,8 +515,8 @@
       "status": "scheduled",
       "resultHome": null,
       "resultAway": null,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-21T22:00:00Z",
+      "apiId": 537372
     },
     {
       "id": "H6",
