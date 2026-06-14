@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14 21:00:50",
+  "updatedAt": "2026-06-14 21:15:37",
   "matches": [
     {
       "id": "A1",
@@ -270,9 +270,9 @@
       "group": "E",
       "home": "Germany",
       "away": "Curaçao",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 7,
+      "resultAway": 1,
       "kickoff": "2026-06-14T17:00:00Z",
       "apiId": 537351
     },
