@@ -230,6 +230,19 @@ function renderNextMatch() {
   }
 
   const kickoff = new Date(nextMatch.kickoff);
+  const diffMs = kickoff - now;
+
+  const totalMinutes = Math.floor(diffMs / 1000 / 60);
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  let countdownText = "";
+
+  if (hours > 0) {
+    countdownText = `Avspark om ${hours} timmar ${minutes} min`;
+  } else {
+    countdownText = `Avspark om ${minutes} min`;
+  }
 
   const kickoffText = kickoff.toLocaleString("sv-SE", {
     weekday: "short",
@@ -244,7 +257,8 @@ function renderNextMatch() {
       <div class="row">
         <div>
           <strong>${nextMatch.home} - ${nextMatch.away}</strong><br>
-          <span class="badge">Grupp ${nextMatch.group} • ${kickoffText}</span>
+          <span class="badge">Grupp ${nextMatch.group} • ${kickoffText}</span><br>
+          <span class="badge">⏱️ ${countdownText}</span>
         </div>
         <div class="points">›</div>
       </div>
