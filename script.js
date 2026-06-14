@@ -105,6 +105,16 @@ function getRankedPlayers() {
     .sort((a, b) => b.points - a.points || b.fourPointers - a.fourPointers);
 }
 
+function getMatchesSortedByKickoff(matches) {
+  return [...matches].sort((a, b) => {
+    if (!a.kickoff && !b.kickoff) return 0;
+    if (!a.kickoff) return 1;
+    if (!b.kickoff) return -1;
+
+    return new Date(a.kickoff) - new Date(b.kickoff);
+  });
+}
+
 function renderAll() {
   renderPodium();
   renderLastUpdated();
@@ -603,7 +613,7 @@ function renderPlayerPageFromData() {
 
   let html = "";
 
-  appData.matches.forEach(match => {
+  getMatchesSortedByKickoff(appData.matches).forEach(match => {
     const prediction = (appData.predictions || []).find(
       p => p.playerId === player.id && p.matchId === match.id
     );
