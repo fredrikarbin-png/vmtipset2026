@@ -1,8 +1,8 @@
-name: Update Match Results
+name: Auto Update Results
 
 on:
   schedule:
-    - cron: "11,26,41,56 * * * *"
+    - cron: "26,41,56,11 * * * *"
   workflow_dispatch:
 
 permissions:
