@@ -107,11 +107,14 @@ function getRankedPlayers() {
 
 function getMatchesSortedByKickoff(matches) {
   return [...matches].sort((a, b) => {
-    if (!a.kickoff && !b.kickoff) return 0;
-    if (!a.kickoff) return 1;
-    if (!b.kickoff) return -1;
+    if (a.kickoff && b.kickoff) {
+      return new Date(a.kickoff) - new Date(b.kickoff);
+    }
 
-    return new Date(a.kickoff) - new Date(b.kickoff);
+    if (a.kickoff && !b.kickoff) return -1;
+    if (!a.kickoff && b.kickoff) return 1;
+
+    return a.id.localeCompare(b.id);
   });
 }
 
@@ -145,10 +148,7 @@ function getRankDisplay(players, index) {
 
   const previousPlayer = players[index - 1];
 
-  if (
-    player.points === previousPlayer.points &&
-    player.fourPointers === previousPlayer.fourPointers
-  ) {
+  if (player.points === previousPlayer.points) {
     return getRankDisplay(players, index - 1);
   }
 
