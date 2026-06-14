@@ -14,6 +14,14 @@ const TEAM_ALIASES = {
   "bosnia/herzeg": "bosnia and herzegovina",
   "bosnia herzeg": "bosnia and herzegovina",
   "bosnia herzegovina": "bosnia and herzegovina",
+  "bosnia/herzeg": "bosnia and herzegovina",
+  "bosnia herzeg": "bosnia and herzegovina",
+  "bosnia herzegovina": "bosnia and herzegovina",
+  "bosniaherzeg": "bosnia and herzegovina",
+  "bosniaherzegovina": "bosnia and herzegovina",
+
+  "cape verde": "cape verde",
+  "cabo verde": "cape verde",  
 
   "ivory coast": "cote divoire",
   "côte divoire": "cote divoire",
