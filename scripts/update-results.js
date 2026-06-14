@@ -21,7 +21,8 @@ const TEAM_ALIASES = {
   "bosniaherzegovina": "bosnia and herzegovina",
 
   "cape verde": "cape verde",
-  "cabo verde": "cape verde",  
+  "cape verde islands": "cape verde",
+  "cabo verde": "cape verde",
 
   "ivory coast": "cote divoire",
   "côte divoire": "cote divoire",
