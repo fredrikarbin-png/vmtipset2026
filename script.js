@@ -107,12 +107,15 @@ function getRankedPlayers() {
 
 function getMatchesSortedByKickoff(matches) {
   return [...matches].sort((a, b) => {
-    if (a.kickoff && b.kickoff) {
+    const aHasKickoff = Boolean(a.kickoff);
+    const bHasKickoff = Boolean(b.kickoff);
+
+    if (aHasKickoff && bHasKickoff) {
       return new Date(a.kickoff) - new Date(b.kickoff);
     }
 
-    if (a.kickoff && !b.kickoff) return -1;
-    if (!a.kickoff && b.kickoff) return 1;
+    if (aHasKickoff && !bHasKickoff) return -1;
+    if (!aHasKickoff && bHasKickoff) return 1;
 
     return a.id.localeCompare(b.id);
   });
