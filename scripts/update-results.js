@@ -72,19 +72,6 @@ async function main() {
       )
     );
 
-    const candidates = apiData.matches.filter(m =>
-      same(m.homeTeam?.name, match.home) ||
-      same(m.awayTeam?.name, match.away) ||
-      same(m.homeTeam?.name, match.away) ||
-      same(m.awayTeam?.name, match.home)
-    );
-
-    if (match.home.includes("Cape") || match.away.includes("Cape")) {
-      console.log("API-kandidater:", candidates.map(c =>
-        `${c.homeTeam.name} - ${c.awayTeam.name}`
-      ));
-    }    
-
     if (!apiMatch) {
       console.log(`Ingen API-match hittades för: ${match.home} - ${match.away}`);
       continue;
