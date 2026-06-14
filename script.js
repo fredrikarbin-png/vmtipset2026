@@ -108,7 +108,7 @@ function renderAll() {
   renderPodium();
   renderLastUpdated();
   renderNextMatch();
-  renderDailyClimber();
+  renderMatchHeroes();
   renderLeaderboard("homeLeaderboard", false);
   renderLeaderboard("leaderboardList", false);
   renderMatches("matchesList", appData.matches);
@@ -307,6 +307,89 @@ function getRankedPlayersForMatches(matches) {
       };
     })
     .sort((a, b) => b.points - a.points || b.fourPointers - a.fourPointers);
+}
+
+function renderMatchHeroes() {
+  const element = document.getElementById("matchHeroes");
+  if (!element) return;
+
+  const finishedMatches = appData.matches
+    .filter(match =>
+      match.status === "finished" &&
+      match.kickoff
+    )
+    .sort((a, b) => new Date(b.kickoff) - new Date(a.kickoff));
+
+  if (finishedMatches.length === 0) {
+    element.innerHTML = `<div class="badge">Ingen färdigspelad match ännu.</div>`;
+    return;
+  }
+
+  const latestMatch = finishedMatches[0];
+
+  const playerResults = appData.players.map(player => {
+    const prediction = (appData.predictions || []).find(
+      p => p.playerId === player.id && p.matchId === latestMatch.id
+    );
+
+    const points = calculatePoints(prediction, latestMatch);
+
+    return {
+      ...player,
+      prediction,
+      points
+    };
+  });
+
+  const maxPoints = Math.max(...playerResults.map(player => player.points));
+
+  const bestPlayers = playerResults
+    .filter(player => player.points === maxPoints)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const correctWinnerCount = playerResults.filter(player => {
+    if (!player.prediction) return false;
+
+    const predictedOutcome = Math.sign(player.prediction.home - player.prediction.away);
+    const actualOutcome = Math.sign(latestMatch.resultHome - latestMatch.resultAway);
+
+    return predictedOutcome === actualOutcome;
+  }).length;
+
+  const fullPotCount = playerResults.filter(player => player.points === 4).length;
+
+  const heroesHtml = bestPlayers.map(player => `
+    <a class="player-link" href="player.html?player=${player.id}">
+      <div class="row">
+        <div>🥇 ${player.name}</div>
+        <div class="points">+${player.points}</div>
+      </div>
+    </a>
+  `).join("");
+
+  element.innerHTML = `
+    <div class="match-card score-${maxPoints}">
+      <div class="match-top">
+        <div>
+          <strong>${latestMatch.home} ${latestMatch.resultHome}–${latestMatch.resultAway} ${latestMatch.away}</strong>
+          <div class="match-meta">Grupp ${latestMatch.group}</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>🏆 Bäst tipsare</h3>
+    ${heroesHtml}
+
+    <div class="row">
+      <div>🟢 Tippade rätt vinnare</div>
+      <div class="points">${correctWinnerCount} av ${playerResults.length}</div>
+    </div>
+
+    <div class="row">
+      <div>🎯 Full pott</div>
+      <div class="points">${fullPotCount}</div>
+    </div>
+  `;
 }
 
 function renderNextMatch() {
