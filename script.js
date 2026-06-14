@@ -122,7 +122,7 @@ function renderAll() {
   renderMatchHeroes();
   renderLeaderboard("homeLeaderboard", false);
   renderLeaderboard("leaderboardList", false);
-  renderMatches("matchesList", appData.matches);
+  renderMatches("matchesList", getMatchesSortedByKickoff(appData.matches));
   renderLatestMatches();
   renderPlayers();
   renderStats();
