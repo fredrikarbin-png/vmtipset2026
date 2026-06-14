@@ -4,6 +4,36 @@ const TOKEN = process.env.FOOTBALL_DATA_TOKEN;
 const FILE = "data/matches.json";
 const API_URL = "https://api.football-data.org/v4/competitions/WC/matches?season=2026";
 
+const TEAM_ALIASES = {
+  "rep of korea": "korea republic",
+  "south korea": "korea republic",
+
+  "czech rep": "czechia",
+  "czech republic": "czechia",
+
+  "bosnia/herzeg": "bosnia and herzegovina",
+  "bosnia herzeg": "bosnia and herzegovina",
+  "bosnia herzegovina": "bosnia and herzegovina",
+
+  "ivory coast": "cote divoire",
+  "côte divoire": "cote divoire",
+  "cote d ivoire": "cote divoire",
+
+  "dr congo": "congo dr",
+  "democratic republic of congo": "congo dr",
+
+  "cape verde": "cabo verde",
+
+  "ir iran": "iran",
+  "iran": "iran",
+
+  "usa": "united states",
+  "united states of america": "united states",
+
+  "curacao": "curacao",
+  "curaçao": "curacao"
+};
+
 async function main() {
   if (!TOKEN) throw new Error("FOOTBALL_DATA_TOKEN saknas");
 
@@ -27,7 +57,10 @@ async function main() {
       same(m.awayTeam?.name, match.away)
     );
 
-    if (!apiMatch) continue;
+    if (!apiMatch) {
+      console.log(`Ingen API-match hittades för: ${match.home} - ${match.away}`);
+      continue;
+    }
 
     match.apiId = apiMatch.id;
     match.kickoff = apiMatch.utcDate;
@@ -54,14 +87,11 @@ async function main() {
 function same(a, b) {
   if (!a || !b) return false;
 
-  const x = clean(a);
-  const y = clean(b);
-
-  return x === y || x.includes(y) || y.includes(x);
+  return clean(a) === clean(b);
 }
 
 function clean(name) {
-  return name
+  let cleaned = name
     .toLowerCase()
     .replaceAll(".", "")
     .replaceAll("'", "")
@@ -69,23 +99,20 @@ function clean(name) {
     .replaceAll("å", "a")
     .replaceAll("ä", "a")
     .replaceAll("ö", "o")
-    .replaceAll("côte divoire", "ivory coast")
-    .replaceAll("cote divoire", "ivory coast")
-    .replaceAll("cote d ivoire", "ivory coast")
-    .replaceAll("cotedivoire", "ivory coast")
-    .replaceAll("south korea", "rep of korea")
-    .replaceAll("korea republic", "rep of korea")
-    .replaceAll("czechia", "czech rep")
-    .replaceAll("czech republic", "czech rep")
-    .replaceAll("bosnia and herzegovina", "bosnia/herzeg")
-    .replaceAll("bosnia herzegovina", "bosnia/herzeg")
-    .replaceAll("congo dr", "dr congo")
-    .replaceAll("democratic republic of congo", "dr congo")
-    .replaceAll("schweiz", "switzerland")
-    .replaceAll("suisse", "switzerland")
-    .replaceAll("usa", "united states")
-    .replaceAll("united states of america", "united states")
+    .replaceAll("é", "e")
+    .replaceAll("è", "e")
+    .replaceAll("ê", "e")
+    .replaceAll("ç", "c")
+    .replaceAll("ô", "o")
+    .replaceAll("ü", "u")
+    .replaceAll(" & ", " and ")
+    .replaceAll("-", " ")
+    .replace(/\s+/g, " ")
     .trim();
+
+  cleaned = cleaned.replace(/[^a-z0-9 ]/g, "");
+
+  return TEAM_ALIASES[cleaned] || cleaned;
 }
 
 main().catch(error => {
