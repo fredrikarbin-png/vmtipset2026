@@ -107,6 +107,7 @@ function getRankedPlayers() {
 function renderAll() {
   renderPodium();
   renderLastUpdated();
+  renderNextMatch();
   renderLeaderboard("homeLeaderboard", false);
   renderLeaderboard("leaderboardList", false);
   renderMatches("matchesList", appData.matches);
@@ -207,6 +208,48 @@ function renderHomeFourPointers() {
   });
 
   document.getElementById("homeFourPointers").innerHTML = html;
+}
+
+function renderNextMatch() {
+  const now = new Date();
+
+  const nextMatch = appData.matches
+    .filter(match =>
+      match.status !== "finished" &&
+      match.kickoff &&
+      new Date(match.kickoff) > now
+    )
+    .sort((a, b) => new Date(a.kickoff) - new Date(b.kickoff))[0];
+
+  const element = document.getElementById("nextMatch");
+  if (!element) return;
+
+  if (!nextMatch) {
+    element.innerHTML = `<div class="badge">Ingen kommande match hittades.</div>`;
+    return;
+  }
+
+  const kickoff = new Date(nextMatch.kickoff);
+
+  const kickoffText = kickoff.toLocaleString("sv-SE", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  element.innerHTML = `
+    <a class="player-link" href="match.html?match=${nextMatch.id}">
+      <div class="row">
+        <div>
+          <strong>${nextMatch.home} - ${nextMatch.away}</strong><br>
+          <span class="badge">Grupp ${nextMatch.group} • ${kickoffText}</span>
+        </div>
+        <div class="points">›</div>
+      </div>
+    </a>
+  `;
 }
 
 function renderLatestMatches() {
