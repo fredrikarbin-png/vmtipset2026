@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14 20:03:15",
+  "updatedAt": "2026-06-14 20:15:38",
   "matches": [
     {
       "id": "A1",
@@ -20,8 +20,8 @@
       "status": "scheduled",
       "resultHome": null,
       "resultAway": null,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-19T01:00:00Z",
+      "apiId": 537330
     },
     {
       "id": "A3",
@@ -42,8 +42,8 @@
       "status": "scheduled",
       "resultHome": null,
       "resultAway": null,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-25T01:00:00Z",
+      "apiId": 537332
     },
     {
       "id": "A5",
@@ -64,8 +64,8 @@
       "status": "finished",
       "resultHome": 2,
       "resultAway": 1,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-12T02:00:00Z",
+      "apiId": 537328
     },
     {
       "id": "B1",
@@ -207,8 +207,8 @@
       "status": "finished",
       "resultHome": 4,
       "resultAway": 1,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-13T01:00:00Z",
+      "apiId": 537345
     },
     {
       "id": "D2",
@@ -218,8 +218,8 @@
       "status": "scheduled",
       "resultHome": null,
       "resultAway": null,
-      "kickoff": null,
-      "apiId": null
+      "kickoff": "2026-06-19T19:00:00Z",
+      "apiId": 537348
     },
     {
       "id": "D3",
