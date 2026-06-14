@@ -3,7 +3,7 @@ name: Update Match Results
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7,37 * * * *"
+   - cron: "5,20,35,50 * * * *"
 
 permissions:
   contents: write
