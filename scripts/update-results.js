@@ -53,8 +53,14 @@ async function main() {
 
   for (const match of data.matches) {
     const apiMatch = apiData.matches.find(m =>
-      same(m.homeTeam?.name, match.home) &&
-      same(m.awayTeam?.name, match.away)
+      (
+        same(m.homeTeam?.name, match.home) &&
+        same(m.awayTeam?.name, match.away)
+      ) ||
+      (
+        same(m.homeTeam?.name, match.away) &&
+        same(m.awayTeam?.name, match.home)
+      )
     );
 
     if (!apiMatch) {
@@ -62,13 +68,23 @@ async function main() {
       continue;
     }
 
+    const reversed =
+      same(apiMatch.homeTeam?.name, match.away) &&
+      same(apiMatch.awayTeam?.name, match.home);
+
     match.apiId = apiMatch.id;
     match.kickoff = apiMatch.utcDate;
 
     if (apiMatch.status === "FINISHED") {
       match.status = "finished";
-      match.resultHome = apiMatch.score.fullTime.home;
-      match.resultAway = apiMatch.score.fullTime.away;
+
+      if (reversed) {
+        match.resultHome = apiMatch.score.fullTime.away;
+        match.resultAway = apiMatch.score.fullTime.home;
+      } else {
+        match.resultHome = apiMatch.score.fullTime.home;
+        match.resultAway = apiMatch.score.fullTime.away;
+      }
     } else {
       match.status = "scheduled";
       match.resultHome = null;
