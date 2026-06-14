@@ -135,7 +135,7 @@ function clean(name) {
     .replace(/\s+/g, " ")
     .trim();
 
-  cleaned = cleaned.replace(/[^a-z0-9 ]/g, "");
+  cleaned = cleaned.replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
 
   return TEAM_ALIASES[cleaned] || cleaned;
 }
