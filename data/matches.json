@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15 20:00:58",
+  "updatedAt": "2026-06-15 20:15:35",
   "matches": [
     {
       "id": "A1",
@@ -468,9 +468,9 @@
       "group": "H",
       "home": "Spain",
       "away": "Cape Verde",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-15T16:00:00Z",
       "apiId": 537369
     },
