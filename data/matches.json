@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15 09:45:30",
+  "updatedAt": "2026-06-15 10:00:52",
   "matches": [
     {
       "id": "A1",
@@ -325,9 +325,9 @@
       "group": "E",
       "home": "Ivory Coast",
       "away": "Ecuador",
-      "status": "finished",
-      "resultHome": 1,
-      "resultAway": 0,
+      "status": "scheduled",
+      "resultHome": null,
+      "resultAway": null,
       "kickoff": "2026-06-14T23:00:00Z",
       "apiId": 537352
     },
