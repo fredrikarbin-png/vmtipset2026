@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15 23:00:51",
+  "updatedAt": "2026-06-15 23:15:28",
   "matches": [
     {
       "id": "A1",
@@ -402,9 +402,9 @@
       "group": "G",
       "home": "Belgium",
       "away": "Egypt",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 1,
       "kickoff": "2026-06-15T19:00:00Z",
       "apiId": 537363
     },
