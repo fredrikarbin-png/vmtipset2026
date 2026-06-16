@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16 05:00:43",
+  "updatedAt": "2026-06-16 05:15:38",
   "matches": [
     {
       "id": "A1",
@@ -457,9 +457,9 @@
       "group": "G",
       "home": "IR Iran",
       "away": "New Zealand",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 2,
+      "resultAway": 2,
       "kickoff": "2026-06-16T01:00:00Z",
       "apiId": 537364
     },
