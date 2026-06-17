@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18 00:00:47",
+  "updatedAt": "2026-06-18 00:15:32",
   "matches": [
     {
       "id": "A1",
@@ -732,9 +732,9 @@
       "group": "L",
       "home": "England",
       "away": "Croatia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 4,
+      "resultAway": 2,
       "kickoff": "2026-06-17T20:00:00Z",
       "apiId": 537409
     },
