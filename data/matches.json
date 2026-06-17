@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17 02:00:45",
+  "updatedAt": "2026-06-17 02:15:36",
   "matches": [
     {
       "id": "A1",
@@ -589,9 +589,9 @@
       "group": "I",
       "home": "Iraq",
       "away": "Norway",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 4,
       "kickoff": "2026-06-16T22:00:00Z",
       "apiId": 537392
     },
