@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18 20:00:46",
+  "updatedAt": "2026-06-18 20:15:35",
   "matches": [
     {
       "id": "A1",
@@ -50,9 +50,9 @@
       "group": "A",
       "home": "South Africa",
       "away": "Czech Rep.",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 1,
       "kickoff": "2026-06-18T16:00:00Z",
       "apiId": 537329
     },
