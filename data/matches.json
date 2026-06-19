@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19 05:00:44",
+  "updatedAt": "2026-06-19 05:15:28",
   "matches": [
     {
       "id": "A1",
@@ -17,9 +17,9 @@
       "group": "A",
       "home": "Mexico",
       "away": "Rep. of Korea",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 0,
       "kickoff": "2026-06-19T01:00:00Z",
       "apiId": 537330
     },
