@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19 02:00:50",
+  "updatedAt": "2026-06-19 02:15:32",
   "matches": [
     {
       "id": "A1",
@@ -83,9 +83,9 @@
       "group": "B",
       "home": "Canada",
       "away": "Qatar",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 6,
+      "resultAway": 0,
       "kickoff": "2026-06-18T22:00:00Z",
       "apiId": 537336
     },
