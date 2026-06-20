@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20 02:00:47",
+  "updatedAt": "2026-06-20 02:15:30",
   "matches": [
     {
       "id": "A1",
@@ -73,8 +73,8 @@
       "home": "Canada",
       "away": "Bosnia/Herzeg.",
       "status": "finished",
-      "resultHome": null,
-      "resultAway": null,
+      "resultHome": 1,
+      "resultAway": 1,
       "kickoff": "2026-06-12T19:00:00Z",
       "apiId": 537333
     },
@@ -182,9 +182,9 @@
       "group": "C",
       "home": "Morocco",
       "away": "Scotland",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 0,
       "kickoff": "2026-06-19T22:00:00Z",
       "apiId": 537342
     },
