@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20 04:30:37",
+  "updatedAt": "2026-06-20 04:45:31",
   "matches": [
     {
       "id": "A1",
@@ -149,9 +149,9 @@
       "group": "C",
       "home": "Brazil",
       "away": "Haiti",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 0,
       "kickoff": "2026-06-20T00:30:00Z",
       "apiId": 537341
     },
