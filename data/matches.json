@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21 23:00:42",
+  "updatedAt": "2026-06-21 23:15:30",
   "matches": [
     {
       "id": "A1",
@@ -413,9 +413,9 @@
       "group": "G",
       "home": "Belgium",
       "away": "IR Iran",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-21T19:00:00Z",
       "apiId": 537365
     },
