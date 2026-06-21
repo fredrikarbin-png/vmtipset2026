@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21 08:00:44",
+  "updatedAt": "2026-06-21 08:15:30",
   "matches": [
     {
       "id": "A1",
@@ -380,9 +380,9 @@
       "group": "F",
       "home": "Japan",
       "away": "Tunisia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 4,
+      "resultAway": 0,
       "kickoff": "2026-06-21T04:00:00Z",
       "apiId": 537360
     },
