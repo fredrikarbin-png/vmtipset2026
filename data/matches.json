@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21 03:45:28",
+  "updatedAt": "2026-06-21 04:00:45",
   "matches": [
     {
       "id": "A1",
@@ -314,9 +314,9 @@
       "group": "E",
       "home": "Curaçao",
       "away": "Ecuador",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-21T00:00:00Z",
       "apiId": 537354
     },
