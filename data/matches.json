@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21 20:00:46",
+  "updatedAt": "2026-06-21 20:15:32",
   "matches": [
     {
       "id": "A1",
@@ -479,9 +479,9 @@
       "group": "H",
       "home": "Spain",
       "away": "Saudi Arabia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 5,
+      "resultAway": 0,
       "kickoff": "2026-06-21T16:00:00Z",
       "apiId": 537371
     },
