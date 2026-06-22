@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22 21:00:51",
+  "updatedAt": "2026-06-22 21:15:38",
   "matches": [
     {
       "id": "A1",
@@ -611,9 +611,9 @@
       "group": "J",
       "home": "Argentina",
       "away": "Austria",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 2,
+      "resultAway": 0,
       "kickoff": "2026-06-22T17:00:00Z",
       "apiId": 537399
     },
