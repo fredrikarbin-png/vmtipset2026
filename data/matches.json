@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24 00:00:49",
+  "updatedAt": "2026-06-24 00:06:14",
   "matches": [
     {
       "id": "A1",
@@ -743,9 +743,9 @@
       "group": "L",
       "home": "England",
       "away": "Ghana",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-23T20:00:00Z",
       "apiId": 537411
     },
