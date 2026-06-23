@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23 04:00:45",
+  "updatedAt": "2026-06-23 04:15:28",
   "matches": [
     {
       "id": "A1",
@@ -578,9 +578,9 @@
       "group": "I",
       "home": "Senegal",
       "away": "Norway",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 2,
+      "resultAway": 3,
       "kickoff": "2026-06-23T00:00:00Z",
       "apiId": 537394
     },
