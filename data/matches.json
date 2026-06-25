@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26 00:00:45",
+  "updatedAt": "2026-06-26 00:15:27",
   "matches": [
     {
       "id": "A1",
@@ -292,9 +292,9 @@
       "group": "E",
       "home": "Germany",
       "away": "Ecuador",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 2,
       "kickoff": "2026-06-25T20:00:00Z",
       "apiId": 537355
     },
@@ -303,9 +303,9 @@
       "group": "E",
       "home": "Curaçao",
       "away": "Ivory Coast",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 2,
       "kickoff": "2026-06-25T20:00:00Z",
       "apiId": 537356
     },
