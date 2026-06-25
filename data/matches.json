@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25 05:00:46",
+  "updatedAt": "2026-06-25 05:15:30",
   "matches": [
     {
       "id": "A1",
@@ -28,9 +28,9 @@
       "group": "A",
       "home": "Mexico",
       "away": "Czech Rep.",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 0,
       "kickoff": "2026-06-25T01:00:00Z",
       "apiId": 537331
     },
@@ -39,9 +39,9 @@
       "group": "A",
       "home": "South Africa",
       "away": "Rep. of Korea",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 0,
       "kickoff": "2026-06-25T01:00:00Z",
       "apiId": 537332
     },
@@ -73,8 +73,8 @@
       "home": "Canada",
       "away": "Bosnia/Herzeg.",
       "status": "finished",
-      "resultHome": 1,
-      "resultAway": 1,
+      "resultHome": null,
+      "resultAway": null,
       "kickoff": "2026-06-12T19:00:00Z",
       "apiId": 537333
     },
