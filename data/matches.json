@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26 02:45:29",
+  "updatedAt": "2026-06-26 03:00:42",
   "matches": [
     {
       "id": "A1",
@@ -358,9 +358,9 @@
       "group": "F",
       "home": "Netherlands",
       "away": "Tunisia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 1,
       "kickoff": "2026-06-25T23:00:00Z",
       "apiId": 537361
     },
