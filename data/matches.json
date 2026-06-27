@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27 07:00:45",
+  "updatedAt": "2026-06-27 07:15:27",
   "matches": [
     {
       "id": "A1",
@@ -424,9 +424,9 @@
       "group": "G",
       "home": "Belgium",
       "away": "New Zealand",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 5,
+      "resultAway": 1,
       "kickoff": "2026-06-27T03:00:00Z",
       "apiId": 537367
     },
@@ -435,9 +435,9 @@
       "group": "G",
       "home": "Egypt",
       "away": "IR Iran",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 2,
       "kickoff": "2026-06-27T03:00:00Z",
       "apiId": 537368
     },
