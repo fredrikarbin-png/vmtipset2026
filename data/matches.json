@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27 04:00:46",
+  "updatedAt": "2026-06-27 04:15:28",
   "matches": [
     {
       "id": "A1",
@@ -490,9 +490,9 @@
       "group": "H",
       "home": "Spain",
       "away": "Uruguay",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 1,
+      "resultAway": 0,
       "kickoff": "2026-06-27T00:00:00Z",
       "apiId": 537373
     },
@@ -501,9 +501,9 @@
       "group": "H",
       "home": "Cape Verde",
       "away": "Saudi Arabia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-27T00:00:00Z",
       "apiId": 537374
     },
