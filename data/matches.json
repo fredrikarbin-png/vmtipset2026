@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27 07:15:27",
+  "updatedAt": "2026-06-27 07:30:37",
   "matches": [
     {
       "id": "A1",
@@ -437,7 +437,7 @@
       "away": "IR Iran",
       "status": "finished",
       "resultHome": 1,
-      "resultAway": 2,
+      "resultAway": 1,
       "kickoff": "2026-06-27T03:00:00Z",
       "apiId": 537368
     },
