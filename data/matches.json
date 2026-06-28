@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28 03:30:39",
+  "updatedAt": "2026-06-28 03:45:28",
   "matches": [
     {
       "id": "A1",
@@ -688,9 +688,9 @@
       "group": "K",
       "home": "Portugal",
       "away": "Colombia",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 0,
+      "resultAway": 0,
       "kickoff": "2026-06-27T23:30:00Z",
       "apiId": 537407
     },
@@ -699,9 +699,9 @@
       "group": "K",
       "home": "DR Congo",
       "away": "Uzbekistan",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 1,
       "kickoff": "2026-06-27T23:30:00Z",
       "apiId": 537408
     },
