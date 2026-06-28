@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28 06:00:46",
+  "updatedAt": "2026-06-28 06:15:27",
   "matches": [
     {
       "id": "A1",
@@ -622,9 +622,9 @@
       "group": "J",
       "home": "Argentina",
       "away": "Jordan",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 1,
       "kickoff": "2026-06-28T02:00:00Z",
       "apiId": 537401
     },
@@ -633,9 +633,9 @@
       "group": "J",
       "home": "Algeria",
       "away": "Austria",
-      "status": "scheduled",
-      "resultHome": null,
-      "resultAway": null,
+      "status": "finished",
+      "resultHome": 3,
+      "resultAway": 3,
       "kickoff": "2026-06-28T02:00:00Z",
       "apiId": 537402
     },
